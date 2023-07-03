@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Community Page
+{% endblock %}
+
+{% block content %}
+
+
+<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="text-center text-danger">About</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>About</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+<!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</strong></h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 style="italics">{{ about.0.title }}</h2>
+            <p>{{ about.0.description }}</p>
+            <div class="text-center">
+              <button class="btn btn-success" type="submit"><a href="{% url 'inside' %}">Head Out!</a></button>
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <img src="{{ about.0.image.url }}" style="height: 500px; width: 600px" alt="collage of dragonball images">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+{% endblock %}

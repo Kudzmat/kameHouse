@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Inside Kame
+{% endblock %}
+
+{% block content %}
+
+
+<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="text-center text-danger">About</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>About</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+<!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>You Have Arrived In an Alternate Timeline</strong></h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 style="italics">{{ about.0.title }}</h2>
+            <p>{{ story.description }}</p>
+          </div>
+        </div>
+
+        <!-- slid one -->
+        <div class="swiper-slide">
+          <div class="row event-item">
+            <div class="col-lg-6">
+              <img src="{{ story.image1.url }}" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 2 -->
+        <div class="swiper-slide">
+          <div class="row event-item">
+            <div class="col-lg-6">
+              <img src="{{ story.image2.url }}" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- slide 3 -->
+        <div class="swiper-slide">
+          <div class="row event-item">
+            <div class="col-lg-6">
+              <img src="{{ story.image3.url }}" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="text-center">
+              <button class="btn btn-success" type="submit"><a href="{% url 'save_timeline' %}">Record Findings</a></button>
+            </div>
+        {% endif %}
+
+      </div>
+    </section><!-- End About Us Section -->
+
+{% endblock %}
